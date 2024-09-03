@@ -1,0 +1,97 @@
+@use "common" as *;
+
+.preview-list {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding: 3% 5%;
+  gap: 2rem;
+  overflow: auto;
+  transition: all 0.3s;
+  scrollbar-width: thin;
+
+  .recipe-preview {
+    max-width: 62.5%;
+    &:hover {
+      transform: translateY(-2rem);
+    }
+  }
+
+  .active-recipe:hover {
+    transform: translateY(0) scale(0.875);
+  }
+}
+
+.current-page {
+  position: static;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .prev-page,
+  .next-page {
+    padding: 5% 8%;
+  }
+}
+
+.page-numbers {
+  width: 60%;
+  display: flex;
+  overflow: hidden;
+  p {
+    @include flex-center;
+    width: 12%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    transition: all 0.5s;
+  }
+}
+
+.current-page-number {
+  background-color: rgba($color-dark, $alpha: 0.5);
+}
+
+@media (min-width: 987px) {
+  .search-results {
+    background-color: #fff;
+    min-height: 89rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  .page {
+    flex-direction: column;
+    width: 100%;
+
+    .recipe-preview {
+      max-width: none;
+
+      &:hover {
+        transform: translateX(+2rem);
+      }
+    }
+
+    .active-recipe:hover {
+      transform: translateX(0) scale(0.875);
+    }
+  }
+
+  .pagination {
+    width: 100%;
+    justify-self: end;
+  }
+
+  .page-numbers p {
+    width: 24%;
+  }
+}

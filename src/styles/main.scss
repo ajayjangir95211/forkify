@@ -1,0 +1,83 @@
+@use "common" as *;
+@use "recipe" as *;
+@use "recipe-preview" as *;
+@use "search" as *;
+@use "bookmarks" as *;
+
+.container {
+  border-radius: 2rem;
+  background-color: #f9f5f3;
+}
+
+header {
+  padding: 3% 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 27.5rem;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+
+  .form-control {
+    @include flex-center;
+    background-color: #fff;
+    border-radius: 256rem;
+
+    input {
+      width: 55rem;
+      @include form-element();
+    }
+  }
+}
+
+.error {
+  gap: 2rem;
+}
+
+.spinner svg {
+  animation: spin 2s linear infinite;
+}
+
+.message {
+  width: 100%;
+  svg {
+    transform: scale(2);
+    flex-shrink: 0;
+  }
+  @include flex-center;
+  gap: 5rem;
+  padding: 8rem 13rem;
+  color: rgba($color: #000000, $alpha: 0.74);
+  font-weight: 600;
+}
+
+@media (min-width: 987px) {
+  body {
+    padding: 5% 8%;
+  }
+
+  .container {
+    border: solid rgba($color-dark, $alpha: 0.5) 2px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    > * {
+      overflow-x: hidden;
+    }
+  }
+}

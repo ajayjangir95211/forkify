@@ -1,0 +1,87 @@
+// 0.25,0.5,0.75,1.25,2.0,3.25,5.25,8.5 ,13.75,22.25
+// 0.5 ,1.0,1.5 ,2.5 ,4.0,6.5 ,10.5,17.0,27.5 ,44.5
+// 1   ,2  ,3   ,5   ,8  ,13  ,21  ,34  ,55   ,89
+// 233,377, 610, 987,1597
+
+$color-light: #face88;
+$color-dark: #f59583;
+$background: #f9f5f3;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: keep-all;
+  color: inherit;
+  text-overflow: ellipsis;
+}
+
+*:focus {
+  outline: none; /* Remove default outline */
+  transition: box-shadow 0.2s ease-in-out; /* Add a smooth transition for better UX */
+}
+
+html {
+  font-size: calc(25% + 0.067vw);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 3.25rem;
+  font-family: "Poppins", sans-serif;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin form-element {
+  font-size: inherit;
+  border: none;
+  border-radius: 256rem;
+  padding: 2rem 3rem;
+}
+
+button,
+select {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.25;
+}
+
+.btn {
+  @include flex-center();
+  @include form-element();
+  color: #fff;
+  background: linear-gradient(0, $color-light, $color-dark);
+  svg {
+    fill: #fff;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+svg {
+  width: 5rem;
+  height: 5rem;
+  fill: $color-dark;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0) scale(2.5);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(2.5);
+  }
+}

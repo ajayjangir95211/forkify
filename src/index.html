@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forkify</title>
+    <script defer type="module" src="./scripts/controller.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <a href="./index.html"
+            ><img class="logo" src="./img/logo.png" alt="logo"
+          /></a>
+          <div class="bookmarks-container">
+            <button class="bookmarks-btn btn">
+              <svg>
+                <use href="./img/icons.svg#icon-bookmark"></use>
+              </svg>
+              Bookmarks
+            </button>
+            <div class="bookmarks"></div>
+          </div>
+        </nav>
+        <form action="/" class="search-form">
+          <div class="form-control">
+            <input
+              type="text"
+              placeholder="Search over 1,000,000 recipes..."
+              name="search-query"
+              id=""
+            />
+            <button class="search-btn btn">
+              <svg>
+                <use href="./img/icons.svg#icon-search"></use>
+              </svg>
+              Search
+            </button>
+          </div>
+        </form>
+      </header>
+      <main>
+        <div class="search-results">
+          <section class="preview-list"></section>
+          <section class="pagination"></section>
+        </div>
+        <section class="recipe-container">
+          <div class="message">
+            <svg><use href="./img/icons.svg#icon-smile"></use></svg>
+            Start by searching for a recipe or an ingredient. Have fun!
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
