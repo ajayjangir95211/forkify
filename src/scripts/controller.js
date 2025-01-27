@@ -5,9 +5,6 @@ import RecipeView from "./view/recipe-view";
 import SearchView from "./view/search-view";
 import BookmarksView from "./view/bookmarks-view";
 import BookmarksModel from "./model/bookmarks-model";
-import { fraction } from "mathjs";
-
-console.log(fraction);
 
 document.querySelector(".search-form").addEventListener("submit", (e) => {
   e.preventDefault();
